@@ -1,81 +1,111 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="poolesville_hacks">
+    <main class="py-20">
+        <section
+            class="mx-auto w-11/12 max-w-3xl flex items-center justify-center flex-col gap-4"
+        >
+            <div class="flex items-center flex-col gap-2">
+                <h1 class="text-5xl font-extrabold">poolesville_hacks</h1>
+                <h2 class="text-2xl font-bold text-center">
+                    A group of Poolesville High School students <br /> running <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+                        >hackathons</span
+                    >
+                </h2>
+            </div>
+        </section>
+        <section class="mx-auto w-11/12 max-w-3xl mt-4">
+            <div class="flex flex-wrap gap-6 items-center justify-center">
+                <Card
+                    title="poolesville_hacks 2"
+                    highlights={` - 12 hours <br/> - 30 participants <br/> - 4 professional mentors`}
+                    devpost="https://poolesville-hacks-2.devpost.com/"
+                    website="https://2.poolesvillehacks.tech/"
+                    type="In-person"
+                    date="April 2023"
+                />
+                <Card
+                    title="BlairHacks Mini '22"
+                    highlights={` - 8 hours <br/> - 50 participants <br/> - 4 workshops`}
+                    website="https://mini.blairhacks.com/"
+                    type="In-person"
+                    date="December 2022"
+                />
+                <Card
+                    title="poolesville_hacks 1"
+                    highlights={` - 41 hours <br/> - 73 participants`}
+                    website="https://1.poolesvillehacks.tech/"
+                    devpost="https://poolesvillehacks.devpost.com/"
+                    type="Virtual"
+                    date="May 2022"
+                />
+            </div>
+        </section>
+        <section
+            class="mx-auto w-11/12 max-w-3xl flex items-center justify-center flex-col mt-10"
+        >
+            <h1 class="text-4xl font-bold">Team</h1>
+            <div class="grid grid-cols-3 gap-10 text-lg text-center">
+                <p>
+                    Jaden Hou
+                    <br />
+                    <span class="text-sm">Co-Founder & Director • 2023</span>
+                </p>
+                <p>
+                    James Xu
+                    <br />
+                    <span class="text-sm">Lead • 2023</span>
+                </p>
+                <p>
+                    Abhimanyu Ghosh
+                    <br />
+                    <span class="text-sm">Lead • 2023</span>
+                </p>
+                <p>
+                    Arjun Rao
+                    <br />
+                    <span class="text-sm">Lead • 2023</span>
+                </p>
+                <p>
+                    Charles Hu
+                    <br />
+                    <span class="text-sm">Lead • 2023</span>
+                </p>
+                <p>
+                    Isabela Magnoni
+                    <br />
+                    <span class="text-sm">Team • 2023</span>
+                </p>
+                <p>
+                    Ben Ren
+                    <br />
+                    <span class="text-sm">Team • 2023</span>
+                </p>
+                <p>
+                    Caitlin Woodward
+                    <br />
+                    <span class="text-sm">Team • 2023</span>
+                </p>
+                <p>
+                    Soham Kyada
+                    <br />
+                    <span class="text-sm">Co-Founder & Director • 2022</span>
+                </p>
+                <p>
+                    Bryan Yung
+                    <br />
+                    <span class="text-sm">Team • 2022</span>
+                </p>
+                <p>
+                    Nitya Mahawar
+                    <br />
+                    <span class="text-sm">Team • 2022</span>
+                </p>
+            </div>
+        </section>
+    </main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
