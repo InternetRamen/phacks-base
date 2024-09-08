@@ -7,6 +7,7 @@ export interface Props {
     website: string;
     date: string;
     image?: string;
+    album?: string;
 }
 
 const props = Astro.props;
@@ -49,5 +50,22 @@ const props = Astro.props;
         >
             <p class="w-full bg-black rounded-md px-3 py-3">Website</p>
         </a>
+        {
+            props.album && (
+            <a
+                href={props.album}
+                target="_blank"
+                class={`bg-gradient-to-r from-red-300 via-orange-300 to-yellow-400
+            p-[0.25rem] rounded-lg text-xl
+            transition-[background-position] duration-500
+            bg-[position:100%] hover:bg-[position:0%]
+            bg-[size:400%]
+            flex w-fit
+            `}
+                >
+                    <p class="w-full bg-black rounded-md px-3 py-3">Album</p>
+                </a>
+            )
+        }
     </div>
 </div>
